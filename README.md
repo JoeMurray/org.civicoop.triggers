@@ -6,9 +6,9 @@ This example will show what the trigger/action parameters are.
 
 We want to achieve the following:
 
-- Every contact which first name is equal to John we want them to be added to the group 'Johns'. 
-- And when the contact has contributed something 7 days ago
-- This group has id 6.
+- Add to the group 'Johns' (This group has id 6)
+- Every contact whose first name is equal to John 
+- And who contributed something 7 days ago
 
 ###Trigger Rules
 
@@ -19,7 +19,7 @@ The trigger rules and the condition determine which entities to match for trigge
 <tbody>
 <tr>
     <td>20</td><td>When firstname = John</td><td>firstname_john</td><td>Contact</td></tr>
-    <td>21</td><td>When contribution completed and 7 days ago</td><td>contribution_completed</td><td>Contribution</td></tr>
+    <td>21</td><td>When contribution completed 7 days ago</td><td>contribution_completed</td><td>Contribution</td></tr>
 </tbody>
 </table>
 
@@ -47,7 +47,7 @@ The action is the action which is executed on a found entity. The action consist
 
 The API parameters can contain *tokens* which consist of curly brackets around them and the entity name with a dot for the field of the entity. e.g. {contribution.total_amount}
 
-The entities refer back to the entities used in the trigger part. If you have moltiple entities e.g. multiple groups you can use group one as {group1.id} and for the second group {group2.id}
+The entities refer back to the entities used in the trigger part. If you have multiple entities e.g. multiple groups you can use group one as {group1.id} and for the second group {group2.id}
 
 ###Rule Schedule
 
@@ -56,7 +56,7 @@ A rule schedule determines when a rule is scheduled for checking and executing t
 <table>
 <thead><tr><th>ID</th><th>Label</th><th>Name</th><th>Action rule ID</th><th>Schedule</th><th>is active</th><th>Start date</th><th>End date</th></tr></thead>
 <tbody>
-    <tr><td>50</td><td>John to Johns (every morning at 7)</td><td>john_to_johns</td><td>40</td><td>Tomorrow +7 hours</td><td>1</td><td> </td><td> </td></tr> 
+    <tr><td>50</td><td>John to Johns (every morning at 7am)</td><td>john_to_johns</td><td>40</td><td>Tomorrow +7 hours</td><td>1</td><td> </td><td> </td></tr> 
 </tbody>
 </table>
 
